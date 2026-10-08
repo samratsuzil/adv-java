@@ -6,17 +6,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        JFrame frame=new JFrame("Color");
+        JFrame frame = new JFrame("Image");
+
+        // Load the image using its file path
+        ImageIcon myImage = new ImageIcon("src/icon.png");
+
+        // Add the image to a label
+        JLabel imageLabel = new JLabel(myImage);
+
+        frame.add(imageLabel);
+
+        frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Font myFont=new Font("Arial",Font.BOLD|Font.ITALIC,50);
-        JLabel label=new JLabel("Saptagandaki",JLabel.CENTER);
-        label.setFont(myFont);
-
-        frame.add(label);
-
-        frame.setSize(400,400);
+        // Make the frame visible after setting everything up
         frame.setVisible(true);
+
 
 
     }
