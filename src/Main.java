@@ -1,28 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Main {
+void main() {
+    JFrame frame = new JFrame("Event Handling");
 
-    public static void main(String[] args) {
+    JButton button = new JButton("Click Me!");
 
-        JFrame frame = new JFrame("Image");
+    // Register an action listener to handle the click event
+    button.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Button was clicked!");
+        }
+    });
 
-        // Load the image using its file path
-        ImageIcon myImage = new ImageIcon("src/icon.png");
+    frame.add(button);
 
-        // Add the image to a label
-        JLabel imageLabel = new JLabel(myImage);
+    frame.setSize(400, 300);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.add(imageLabel);
-
-        frame.setSize(400, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Make the frame visible after setting everything up
-        frame.setVisible(true);
-
-
-
-    }
+    // Make the frame visible after setting everything up
+    frame.setVisible(true);
 }
